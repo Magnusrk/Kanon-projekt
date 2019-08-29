@@ -17,8 +17,11 @@ void draw()
 {
 
 
-  background(250);
-    c.showCannon();
+  showBackground();
+
+
+  c.showCannon();
+
   r++;
   for (int i = 0; i< bullets.length; i++)
   {
