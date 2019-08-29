@@ -30,4 +30,8 @@ void showBackground()
   rectMode(CORNER);
   fill(#F5ED54);
   rect(0,   800, 1500, 800);
+  
+  //Sol
+  fill(#FFD95D);
+  ellipse(1300, 200, 100, 100);
 }
