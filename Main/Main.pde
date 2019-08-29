@@ -1,9 +1,11 @@
 Cannonball[] bullets = new Cannonball [10];
 
+int r=1;
+
 
 void setup() 
 {
-  size(1000, 1000);
+  size(1500, 1000);
 
   for (int i = 0; i< bullets.length; i++)
   {
@@ -13,7 +15,11 @@ void setup()
 
 void draw() 
 {
+
   c.showCannon();
+
+  background(250);
+  r++;
   for (int i = 0; i< bullets.length; i++)
   {
     bullets[i].render();

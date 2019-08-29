@@ -1,20 +1,31 @@
 class Cannonball {
   PVector location;
+  PVector velocity;
+  PVector acceleration;
 
-  
-  
-  
-   Cannonball(float x, float y)
+  Cannonball(float x, float y)
   {
-    x = 100;
-    y = 100;
-    location = new PVector (x,y);
+    x = random(0,1000);
+    y = random(0,1000);
+    location = new PVector (x, y);
+    velocity = new PVector();
+    acceleration = new PVector();
   }
-  
+
   void render()
   {
-    fill(0);
-    ellipse(location.x, location.y, 10,10);
+    pushMatrix();
+    stroke(0);
+    rectMode(RADIUS);
+    translate(location.x,location.y);
+    rotate(radians(r*2));
+    fill(#FFD900);
+    scale(0.3);
+    ellipse(27,0,18,18);
+    rect(0, 0, 25, 10);
+    popMatrix();
+    
+    velocity.add(acceleration);
+    location.add(velocity);
   }
-  
 }

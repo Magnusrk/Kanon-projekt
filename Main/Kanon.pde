@@ -21,6 +21,7 @@ class Cannon {
 
 
 void showCannon() {
+  pushMatrix();
   scale(2);
   fill(#23390A);
   stroke(#23390A);
@@ -40,7 +41,6 @@ void showCannon() {
   fill(255);
   rect(location.x-1, location.y, 1, 5);
   rect(location.x, location.y, 7, 1);
-
+  popMatrix();
 }
-
 }
