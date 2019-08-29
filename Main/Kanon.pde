@@ -1,22 +1,46 @@
+Cannon c = new Cannon();
+
+class Cannon {
+  PVector location;
+  PVector velocity;
+  PVector acceleration;
+  PVector angle;
+  PVector aVelocity;
+  PVector direction;
+  
+  
+  Cannon() {
+    location = new PVector(50, 50);
+    velocity = new PVector();
+    acceleration = new PVector();
+    angle = new PVector();
+    aVelocity = new PVector();
+    direction = new PVector();
+  }
+
+
+
 void showCannon() {
-  scale(10);
+  scale(2);
   fill(#23390A);
   stroke(#23390A);
    strokeWeight(2);
- line(50, 38, 80, 38);
+ line(location.x, location.y-12, 80, 38);
  stroke(0);
  rectMode(CENTER);
-  ellipse(31.5, 50, 15, 15);
-  ellipse(68.5, 50, 15, 15);
- rect(50, 50, 40, 15);
- rect(50, 40, 13, 8);
+  ellipse(location.x-18.5, location.y, 15, 15);
+  ellipse(location.x+18.5, location.y, 15, 15);
+ rect(location.x, location.y, 40, 15);
+ rect(location.x, location.y-10, 13, 8);
  noStroke();
-   ellipse(31.8, 50, 13, 13);
-  ellipse(68.2, 50, 13, 13);
+   ellipse(location.x-18.2, location.y, 13, 13);
+  ellipse(location.x+18.2, location.y, 13, 13);
   fill(255,0,0);
-  rect(50, 50, 7, 5);
+  rect(location.x, location.y, 7, 5);
   fill(255);
-  rect(49, 50, 1, 5);
-  rect(50, 50, 7, 1);
+  rect(location.x-1, location.y, 1, 5);
+  rect(location.x, location.y, 7, 1);
+
+}
 
 }
