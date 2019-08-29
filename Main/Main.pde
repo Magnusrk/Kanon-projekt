@@ -13,6 +13,7 @@ void setup()
 
 void draw() 
 {
+  showCannon();
   for (int i = 0; i< bullets.length; i++)
   {
     bullets[i].render();
