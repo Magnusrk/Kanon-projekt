@@ -5,7 +5,7 @@ class Cannonball {
 
   Cannonball(float x, float y)
   {
-    x = random(0,1000);
+    x = random(0,1500);
     y = random(0,1000);
     location = new PVector (x, y);
     velocity = new PVector();
