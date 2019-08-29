@@ -4,7 +4,7 @@ class Cannon {
   PVector location;
   PVector velocity;
   PVector acceleration;
-  PVector angle;
+  float angle;
   PVector aVelocity;
   PVector direction;
   
@@ -13,9 +13,16 @@ class Cannon {
     location = new PVector(50, 50);
     velocity = new PVector();
     acceleration = new PVector();
-    angle = new PVector();
+    angle = 1.5*PI;
     aVelocity = new PVector();
     direction = new PVector(location.x+30, location.y-12);
+  }
+  
+  void update() {
+    direction.x = cos(angle) * 30;
+    direction.y = sin(angle) * 30;
+    angle = constrain(angle, PI, 2*PI);
+    angle += 0.01;
   }
 
 
@@ -26,7 +33,7 @@ void showCannon() {
   fill(#23390A);
   stroke(#23390A);
    strokeWeight(2);
- line(location.x, location.y-12, direction.x, direction.y);
+ line(location.x, location.y-12, direction.x+location.x, direction.y+location.y-12);
  stroke(0);
  rectMode(CENTER);
   ellipse(location.x-18.5, location.y, 15, 15);

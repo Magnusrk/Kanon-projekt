@@ -19,7 +19,7 @@ void draw()
 
   showBackground();
 
-
+  c.update();
   c.showCannon();
 
   r++;
