@@ -3,12 +3,3 @@ class Cannonball {
   PVector velocity;
   PVector acceleration;
 }
-
-
-void setup() {
-  
-}
-
-void draw() {
-  
-}
