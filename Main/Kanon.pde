@@ -1,4 +1,5 @@
 Cannon c = new Cannon();
+float C = 0.01;
 
 class Cannon {
   PVector location;
@@ -10,10 +11,10 @@ class Cannon {
   
   
   Cannon() {
-    location = new PVector(50, 50);
+    location = new PVector(50, 800/3);
     velocity = new PVector();
     acceleration = new PVector();
-    angle = 1.5*PI;
+    angle = 2*PI;
     aVelocity = new PVector();
     direction = new PVector(location.x+30, location.y-12);
   }
@@ -22,14 +23,23 @@ class Cannon {
     direction.x = cos(angle) * 30;
     direction.y = sin(angle) * 30;
     angle = constrain(angle, PI, 2*PI);
-    angle += 0.01;
+    PVector f = velocity;
+    f.mult(-1);
+    f.normalize();
+    f.mult(C);
+    acceleration.add(f);
+    
+    velocity.add(acceleration);
+    location.add(velocity);
+    velocity.limit(0.5);
+    acceleration.mult(0);
   }
 
 
 
 void showCannon() {
   pushMatrix();
-  scale(2);
+  scale(3);
   fill(#23390A);
   stroke(#23390A);
    strokeWeight(2);

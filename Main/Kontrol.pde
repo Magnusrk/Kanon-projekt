@@ -5,16 +5,16 @@ int speedY;
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == RIGHT) {
-      speedX = 10;
-      speedY = 0;
-      println(speedX);
+      c.acceleration.add(+0.15, 0);
     }
 
     if (keyCode == LEFT) {
-      speedX = -10;
-      speedY = 0;
+      c.acceleration.add(-0.15, 0);
     }
     if (keyCode == UP) {
+      c.angle -= 0.01;
+    }
+    if (keyCode == DOWN) {
       c.angle += 0.01;
     }
 

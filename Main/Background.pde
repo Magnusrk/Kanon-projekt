@@ -29,5 +29,5 @@ void showBackground()
   //Jorden
   rectMode(CORNER);
   fill(#F5ED54);
-  rect(0, 800, 1500, 800);
+  rect(0,   800, 1500, 800);
 }
