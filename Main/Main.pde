@@ -16,7 +16,8 @@ void setup()
 void draw() 
 {
 
-  background(250);
+  showBackground();
+  
   r++;
   showCannon();
   for (int i = 0; i< bullets.length; i++)
