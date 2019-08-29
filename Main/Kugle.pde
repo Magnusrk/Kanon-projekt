@@ -9,18 +9,18 @@ class Cannonball {
     y = random(0,1000);
     location = new PVector (x, y);
     velocity = new PVector();
-    acceleration = new PVector(0.5,0.5);
+    acceleration = new PVector();
   }
 
   void render()
   {
-
     pushMatrix();
+    stroke(0);
     rectMode(RADIUS);
     translate(location.x,location.y);
     rotate(radians(r*2));
     fill(#FFD900);
-    scale(0.4);
+    scale(0.3);
     ellipse(27,0,18,18);
     rect(0, 0, 25, 10);
     popMatrix();
