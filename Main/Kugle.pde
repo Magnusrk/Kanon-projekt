@@ -3,11 +3,9 @@ class Cannonball {
   PVector velocity;
   PVector acceleration;
 
-  Cannonball(float x, float y)
+  Cannonball()
   {
-    x = random(0,1500);
-    y = random(0,1000);
-    location = new PVector (x, y);
+    location = new PVector (10000, 10000);
     velocity = new PVector();
     acceleration = new PVector();
   }
