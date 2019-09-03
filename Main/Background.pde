@@ -34,4 +34,11 @@ void showBackground()
   //Sol
   fill(#FFD95D);
   ellipse(1300, 200, 100, 100);
+  
+  if (frameCount < 300) {
+    fill(0);
+    textSize(100);
+    text("Shoot = ctrl", 200, 200);
+    text("Move = Arrow keys",200,300);
+  }
 }
