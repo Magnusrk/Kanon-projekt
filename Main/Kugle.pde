@@ -24,6 +24,7 @@ class Cannonball {
     stroke(0);
     rectMode(RADIUS);
     translate(location.x, location.y);
+    pushMatrix();
     rotate(angle);
     fill(#FFD900);
     scale(0.3);
@@ -33,7 +34,9 @@ class Cannonball {
     if (location.y>800)
     {
       location.y=10000;
+      
     }
+    popMatrix();
   }
 
   void update() {

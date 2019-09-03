@@ -4,23 +4,23 @@ int bullet = 0;
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == RIGHT) {
-      c.acceleration.add(+0.40, 0);
+      c.acceleration.add(+1, 0);
     }
 
     if (keyCode == LEFT) {
-      c.acceleration.add(-0.40, 0);
+      c.acceleration.add(-1, 0);
     }
     if (keyCode == UP) {
-      c.angle -= 0.01;
+      c.angle -= 0.05;
     }
     if (keyCode == DOWN) {
-      c.angle += 0.01;
+      c.angle += 0.05;
     }
 
     if (key == ESC) {
       exit();
     }
-    if (keyCode == CONTROL && bullet < bullets.length) {
+    if (keyCode == CONTROL && bullet < bullets.length && bulletBuffer!=1) {
       PVector startVelo = new PVector();
       startVelo.set(c.direction);
       startVelo.normalize();
@@ -33,6 +33,7 @@ void keyPressed() {
       bullets[bullet].direction2.set(c.direction);
       bullets[bullet].please = true;
       bullet++;
+      bulletBuffer=1;
     }
   }
 }

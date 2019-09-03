@@ -4,6 +4,7 @@ int r=1;
 float powerS = 8;
 PVector gravity = new PVector(0, 0.1);
 
+int bulletBuffer = 1;
 
 void setup() 
 {
@@ -17,6 +18,9 @@ void setup()
 void draw() 
 {
 
+    if (frameCount%30 == 0) { //Decides buffer between shots
+    bulletBuffer = 0;
+  }
 
   showBackground();
 
