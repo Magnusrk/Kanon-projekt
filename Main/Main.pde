@@ -1,13 +1,14 @@
-Cannonball[] bullets = new Cannonball [1000];
-float power = 0.01;
-int r=1;
-float powerS = 8;
-PVector gravity = new PVector(0, 0.1);
+Cannonball[] bullets = new Cannonball [10];
 
+int r=1;
+PImage billede;
+int stage;
 
 void setup() 
 {
+  stage = 1;
   size(1500, 1000);
+
   for(int i = 0; i < bullets.length; i++) {
     bullets[i] = new Cannonball();
   }
@@ -16,27 +17,23 @@ void setup()
 
 void draw() 
 {
-
-
+if(stage == 1){
+loadImage("Billede.jpg");
+textSize(36);
+textAlign(CENTER);
+text("Hejsa Med Digsa!!!",750, 150);
+textSize(24);
+text("Klik hvis du = Sej",1000, 250);
+}
+if(stage == 2) {
   showBackground();
-
-  c.update();
+   c.update();
   c.showCannon();
 
   r++;
-  for (int i = 0; i< bullets.length; i++)
-  {
-    bullets[i].update();
-    bullets[i].render();
+  for (int i = 0; i< bullets.length; i++){
+  bullets[i].render();
     println(bullets[2].location);
-    if(bullets[i].please == true) {
-      PVector friction = bullets[i].velocity.get();
-      friction.mult(-1);
-      friction.normalize();
-      friction.mult(C);
-      bullets[i].applyForce(friction);
-      bullets[i].applyForce(gravity);
-      bullets[i].shoot();
-    }
-  }
+}
+}
 }
