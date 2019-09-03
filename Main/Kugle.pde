@@ -2,7 +2,6 @@ class Cannonball {
   PVector location;
   PVector velocity;
   PVector acceleration;
-
   Cannonball()
   {
     location = new PVector (10000, 10000);
@@ -25,5 +24,9 @@ class Cannonball {
     
     velocity.add(acceleration);
     location.add(velocity);
+    
+    
+    
+    
   }
 }

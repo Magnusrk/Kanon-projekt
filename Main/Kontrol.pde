@@ -21,7 +21,6 @@ void keyPressed() {
       exit();
     }
     if(keyCode == CONTROL && bullet < 10) {
-      println(1);
       bullets[bullet].location.x = (c.direction.x+c.location.x)*3;
       bullets[bullet].location.y = (c.direction.y+c.location.y-12)*3;
       bullet++;
