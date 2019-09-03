@@ -19,6 +19,7 @@ class Cannonball {
 
   void render()
   {
+
     pushMatrix();
     stroke(0);
     rectMode(RADIUS);
@@ -29,7 +30,10 @@ class Cannonball {
     ellipse(27, 0, 18, 18);
     rect(0, 0, 25, 10);
     popMatrix();
-
+    if (location.y>800)
+    {
+      location.y=10000;
+    }
   }
 
   void update() {
@@ -42,13 +46,12 @@ class Cannonball {
   }
 
   void shoot() {
-      direction2.normalize();
-      direction2.mult(power);
-      acceleration.add(direction2);
+    direction2.normalize();
+    direction2.mult(power);
+    acceleration.add(direction2);
   }
   void applyForce(PVector force) {
-    PVector f = PVector.div(force,1);
+    PVector f = PVector.div(force, 1);
     acceleration.add(f);
   }
-    
 }
