@@ -20,13 +20,19 @@ void keyPressed() {
     if (key == ESC) {
       exit();
     }
-    if(keyCode == CONTROL && bullet < 10) {
-      println(1);
-      bullets[bullet].location.x = (c.direction.x+c.location.x)*3;
-      bullets[bullet].location.y = (c.direction.y+c.location.y-12)*3;
+    if (keyCode == CONTROL && bullet < bullets.length) {
+      PVector startVelo = new PVector();
+      startVelo.set(c.direction);
+      startVelo.normalize();
+      startVelo.mult(powerS);
+      float dira = (c.direction.x+c.location.x)*3;
+      float dirb = (c.direction.y+c.location.y-12)*3;
+      bullets[bullet].location.x = dira;
+      bullets[bullet].location.y = dirb;
+      bullets[bullet].velocity.add(startVelo);
+      bullets[bullet].direction2.set(c.direction);
+      bullets[bullet].please = true;
       bullet++;
     }
-      
-      
   }
 }

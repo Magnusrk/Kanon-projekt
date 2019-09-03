@@ -21,7 +21,7 @@ class Cannon {
     direction.x = cos(angle) * 30;
     direction.y = sin(angle) * 30;
     angle = constrain(angle, PI, 2*PI); //Begrænser kanonens drejning til 180 grader
-
+println(degrees(angle));
     //FRICTION
     PVector f = velocity;
     f.mult(-1);
