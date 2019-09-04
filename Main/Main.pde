@@ -1,4 +1,4 @@
-Cannonball[] bullets = new Cannonball [10];
+Cannonball[] bullets = new Cannonball [100];
 float power = 0.01;
 int r=1;
 float powerS = 8;
