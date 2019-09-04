@@ -10,7 +10,7 @@ class Cannonball {
 
   Cannonball()
   {
-    location = new PVector (10000, 10000);
+    location = new PVector (100000, 100000);
     velocity = new PVector();
     acceleration = new PVector();
     please = false;
@@ -22,6 +22,7 @@ class Cannonball {
 
     pushMatrix();
     stroke(0);
+    strokeWeight(2);
     rectMode(RADIUS);
     translate(location.x, location.y);
     pushMatrix();
@@ -31,10 +32,12 @@ class Cannonball {
     ellipse(27, 0, 18, 18);
     rect(0, 0, 25, 10);
     popMatrix();
-    if (location.y>800)
+    if (location.y >=797)
     {
-      location.y=10000;
-      
+      velocity.mult(0);
+      acceleration.mult(0);
+      angle = 0;
+
     }
     popMatrix();
   }
@@ -54,7 +57,10 @@ class Cannonball {
     acceleration.add(direction2);
   }
   void applyForce(PVector force) {
-    PVector f = PVector.div(force, 1);
-    acceleration.add(f);
+    if (location.y <= 800)
+    {
+      PVector f = PVector.div(force, 1);
+      acceleration.add(f);
+    }
   }
 }

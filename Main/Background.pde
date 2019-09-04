@@ -1,6 +1,7 @@
 void showBackground()
 {
   strokeWeight(0.5);
+  stroke(0);
   background(#B7C3FF);
 
   //Pyramide 1
