@@ -6,10 +6,13 @@ PVector gravity = new PVector(0, 0.1);
 
 int bulletBuffer = 1;
 
+PFont font;
 
 void setup() 
 {
   size(1500, 1000);
+      font = loadFont("ARDESTINE-34.vlw");
+      textFont(font);
   for (int i = 0; i < bullets.length; i++) {
     bullets[i] = new Cannonball();
   }
