@@ -32,23 +32,24 @@ class Cannonball {
     ellipse(27, 0, 18, 18);
     rect(0, 0, 25, 10);
     popMatrix();
-    if (location.y >=797)
+    if (location.y >=800)
     {
       velocity.mult(0);
       acceleration.mult(0);
-      angle = 0;
-
     }
     popMatrix();
   }
 
   void update() {
+    if (location.y <=797)
+    {
     aAcc = acceleration.mag()/30;
     aVel += aAcc;
     angle += aVel;
     velocity.add(acceleration);
     location.add(velocity);
     acceleration.mult(0);
+    }
   }
 
   void shoot() {
@@ -63,4 +64,5 @@ class Cannonball {
       acceleration.add(f);
     }
   }
+  
 }
