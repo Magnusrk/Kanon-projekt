@@ -38,7 +38,7 @@ void showBackground()
   
   if (frameCount < 300) {
     fill(0);
-    textSize(100);
+    textSize(75);
     text("Shoot: Ctrl", 200, 200);
     text("Move: Arrow Keys",200,300);
   }

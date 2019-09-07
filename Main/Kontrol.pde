@@ -3,7 +3,7 @@ int bullet = 0;
 
 void keyPressed() {
   if (keyCode == RIGHT) {
-    c.acceleration.add(+1, 0);
+    c.acceleration.add(1, 0);
   }
 
   if (keyCode == LEFT) {

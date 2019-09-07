@@ -43,7 +43,7 @@ class Cannonball {
   void update() {
     if (location.y <=797)
     {
-    aAcc = acceleration.mag()/30;
+    aAcc = acceleration.mag()/random(15,40);
     aVel += aAcc;
     angle += aVel;
     velocity.add(acceleration);
