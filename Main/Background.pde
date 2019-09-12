@@ -36,7 +36,7 @@ void showBackground()
   fill(#FFD95D);
   ellipse(1300, 200, 100, 100);
   
-  if (frameCount < 300) {
+  if (frameCount < 3000) {
     fill(0);
     textSize(75);
     text("Shoot: Ctrl", 200, 200);

@@ -1,11 +1,12 @@
 Cannonball[] bullets = new Cannonball [100];
+
+
 float power = 0.01;
 int r=1;
 float powerS = 8;
+
 PVector gravity = new PVector(0, 0.1);
-
 int bulletBuffer = 1;
-
 PFont font;
 
 void setup() 

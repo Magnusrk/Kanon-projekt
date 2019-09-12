@@ -53,9 +53,9 @@ class Cannonball {
   }
 
   void shoot() {
-    direction2.normalize();
-    direction2.mult(power);
-    acceleration.add(direction2);
+   direction2.normalize();
+   direction2.mult(power);
+   acceleration.add(direction2);
   }
   void applyForce(PVector force) {
     if (location.y <= 800)
